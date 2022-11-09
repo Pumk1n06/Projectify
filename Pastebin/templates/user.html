@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>new user login page</title>
+{% endblock %}
+
+{% block body %}
+<!--  <marquee> MINI-PASTE_BIN  LOGIN PAGE</marquee>-->
+<div id = "frm">  
+    <h1>enter username and password</h1>  
+    <form name="f2" action = "new_authentication.php" onsubmit = "return validation()" method = "POST">  
+        {{ form.username.label() }} {{ form.username(class="form-control",placeholder="User Name") }}
+        {{ form.password.label() }} {{ form.password(class="form-control",placeholder="Password") }}
+        <br>
+        {{ form.submit(class=btn btn-lg btn-block btn-primary) }}
+     <!--  <p ><font color="red"> password must be more than 6 character</font></p>-->
+   
+         
+    </form>  
+</div>
+<script>  
+        function validation()  
+        {  
+            var id=document.f2.user.value;  
+            var ps=document.f2.pass.value;  
+            if(id.length=="" && ps.length=="") {  
+                alert("User Name and Password fields are empty");  
+                return false;  
+            }  
+            else  
+            {  
+                if(id.length=="") {  
+                    alert("User Name is empty");  
+                    return false;  
+                }   
+                if (ps.length=="") {  
+                alert("Password field is empty");  
+                return false;  
+                }  
+            }      
+             if(ps.length<6){
+            alert("password must be more than 6 charecter");
+                return false;                       
+        } 
+        } 
+</script>  
+{% endblock %}

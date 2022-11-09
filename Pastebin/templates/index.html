@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title> Paste Bin</title>
+{% endblock %}
+
+{% block body %}
+</body> 
+<marquee> MINI-PASTE_BIN  LOGIN PAGE</marquee>
+    <div id = "frm">  
+        <h1>Login</h1>  
+        <form name="f1" method = "POST">  
+            {{ form.username.label() }} {{ form.username(class="form-control",placeholder="User Name") }} 
+            {{ form.password.label() }} {{ form.password(class="form-control",placeholder="Password") }}
+
+            <br>
+            {{ form.submit(class=btn btn-lg btn-block btn-primary) }}
+             
+        </form>  
+    </div>
+  <form>
+     <center> <a href="{{url_for('Template',filename = 'user.html')}}">New user click here to register</a></center>
+    
+    </form>
+   <!--validation for empty field  -->     
+    
+{% endblock %}       

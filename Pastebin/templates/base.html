@@ -1,0 +1,11 @@
+<html>  
+<head>  
+    {% block title %} {% endblock %}  
+  <!--insert style.css file inside index.html  -->  
+  <link rel = "stylesheet" type = "text/css" href ="{{ url_for('static', filename='styleo.css') }}">   
+</head>  
+<body>  
+    {% block body %} {% endblock %}
+  
+</body>     
+</html>  
